@@ -26,14 +26,12 @@ export class ProductItemDetailComponent implements OnInit {
   ) {
     this.activeRouter.paramMap.subscribe((params: ParamMap) => {
       this.id = Number(params.get("id"));
-      this.productItem = this.productService.getOneProduct(this.id) as Product;
     });
   }
 
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe((product: any) => {
-      this.products = product;
-      this.productItem = this.products!.find(p => p.id === this.id) as Product;
+    this.productService.getAllProducts().subscribe((product) => {  
+      this.products = product.filter(p => p.id === this.id);
     });
   }
 }

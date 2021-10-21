@@ -15,17 +15,4 @@ export class ProductsService {
   getAllProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productJson);
   }
-
-  returnProduct(): Product[] {
-    this.getAllProducts().subscribe(product => {
-      this.products = product;
-    });
-
-    return this.products;
-  }
-
-  getOneProduct(id: number): Product | undefined {
-    this.returnProduct();
-    return this.products!.find(p => p.id === id);
-  }
 }

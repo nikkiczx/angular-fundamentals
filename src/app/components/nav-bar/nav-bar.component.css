@@ -1,0 +1,10 @@
+nav {
+    background-color: rgb(15, 170, 170);
+    display:flex;
+    padding: 20px 200px 20px 200px;
+}
+
+a {
+    color: #ffffff;
+    font-weight: bold;
+  }
