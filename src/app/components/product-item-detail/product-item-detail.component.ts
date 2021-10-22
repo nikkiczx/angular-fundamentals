@@ -18,7 +18,6 @@ export class ProductItemDetailComponent implements OnInit {
     quantity: 1
   };
   id: number = 0;
-  products: Product[] = [];
 
   constructor(
     private productService: ProductsService,
@@ -31,8 +30,7 @@ export class ProductItemDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((product) => {  
-      this.productItem = product.filter(p => p.id === this.id) as unknown as Product;
-      //this.products = product.filter(p => p.id === this.id);
+      this.productItem = product.find(p => p.id === this.id) as unknown as Product;      
     });
   }
 }

@@ -1,5 +1,9 @@
 <div class="product-container">
-  <img class="product-image" src="{{ product.url }}" alt="{{ product.name }}" />
+  <a [routerLink]="['/product/', product.id]"><img class="product-image" src="{{ product.url }}" alt="{{ product.name }}" /></a>
   <p>{{ product.name }}</p>
-  <a [routerLink]="['/', product.id]"><button>Details</button></a>
+  <p>${{ product.price }}</p>
+  <select (change)="quantityChange($event)">
+    <option *ngFor="let quantity of inventory"  [value]="quantity" >{{ quantity }}</option>
+  </select>
+  <button (click)="addToCart()">Add To Cart</button>
 </div>
