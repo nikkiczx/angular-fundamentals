@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, ParamMap, Router } from "@angular/router";
+import { ActivatedRoute, ParamMap } from "@angular/router";
 import { ProductsService } from "../../services/products.service";
 import { Product } from "../../models/Product";
 
@@ -31,7 +31,8 @@ export class ProductItemDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((product) => {  
-      this.products = product.filter(p => p.id === this.id);
+      this.productItem = product.filter(p => p.id === this.id) as unknown as Product;
+      //this.products = product.filter(p => p.id === this.id);
     });
   }
 }
