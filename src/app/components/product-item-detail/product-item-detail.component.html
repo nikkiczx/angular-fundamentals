@@ -1,7 +1,15 @@
 <div class="detail-container">
-  <img    
-    src="{{ productItem.url }}"
-    alt="{{ productItem.name }}"
-  />
-  <p>{{ productItem.name }}</p>
+  <div class="detail-item">
+    <img    
+      src="{{ productItem.url }}"
+      alt="{{ productItem.name }}"
+    />
+    <p>Item: {{ productItem.name }}</p>
+    <p>Price: ${{ productItem.price }}</p>
+    <p>Description: {{ productItem.description }}</p>
+    <select (change)="quantityChange($event)">
+      <option *ngFor="let quantity of inventory"  [value]="quantity" >{{ quantity }}</option>
+    </select>
+    <button (click)="addToCart()">Add To Cart</button>
+  </div>
 </div>

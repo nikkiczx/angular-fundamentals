@@ -17,4 +17,11 @@ export class CartService {
     this.cartList.push(product);
     return this.cartList;
   }
+
+  updateQuantity(newQuantity: number, itemID: number): void {
+    let index: number = this.cartList.findIndex(
+      (c) => (c.id = itemID)
+    );
+    this.cartList[index].quantity = newQuantity;
+  }
 }

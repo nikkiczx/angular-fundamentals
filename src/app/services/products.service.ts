@@ -8,7 +8,6 @@ import { Product } from "../models/Product";
 })
 export class ProductsService {
   private productJson: string = "./assets/data.json";
-  products: Product[] = [];
 
   constructor(private http: HttpClient) {}
 
