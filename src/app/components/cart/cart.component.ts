@@ -10,13 +10,12 @@ import { Product } from "../../models/Product";
 export class CartComponent implements OnInit {
   cartList: Product[] = [];  
   totalSum: number = 0;
-  itemQuantity: number = 0;
 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.cartList = this.cartService.getCart();
-    this.getTotal();
+    this.getCartSum();
   }
 
   getTotal() {
@@ -26,5 +25,13 @@ export class CartComponent implements OnInit {
       }      
     }
     return this.totalSum;  
+  }
+
+  getCartSum() {
+    this.totalSum = this.cartService.calcCartTotal();
+  }
+
+  getNewTotal(cart: any) {
+    this.getCartSum();
   }
 }

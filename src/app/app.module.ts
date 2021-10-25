@@ -11,6 +11,8 @@ import { ProductItemDetailComponent } from "./components/product-item-detail/pro
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { CartCheckoutComponent } from './components/cart-checkout/cart-checkout.component';
+import { CartSuccessComponent } from './components/cart-success/cart-success.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     ProductItemDetailComponent,
     NavBarComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    CartCheckoutComponent,
+    CartSuccessComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

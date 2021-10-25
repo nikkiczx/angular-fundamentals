@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit()">
+    <label>Name</label>
+    <input type="text" name="name" [(ngModel)]="name" #p_name="ngModel" required minlength="8">
+
+    <label>Address</label>
+    <textarea type="text" name="address" [(ngModel)]="address" #p_address="ngModel" required minlength="15"></textarea>
+
+    <label>Credit card number</label>
+    <input type="text" name="ccnumber" [(ngModel)]="ccnumber" #p_ccnumber="ngModel" required minlength="16" maxlength="16" placeholder="(16-digit number)">
+
+    <button type="submit">Submit</button>
+</form>
+
+<div *ngIf="p_name.invalid && p_name.dirty">
+    <div *ngIf="p_name.errors?.required">
+        Please enter a valid name.
+    </div>
+    <div *ngIf="p_name.errors?.minlength">
+        Name must contain at least 8 characters.
+    </div>
+</div>
+
+<div *ngIf="p_address.invalid && p_address.dirty">
+    <div *ngIf="p_address.errors?.required">
+        Please enter a valid address.
+    </div>
+    <div *ngIf="p_address.errors?.minlength">
+        Address must contain at least 15 characters.
+    </div>
+</div>
+
+<div *ngIf="p_ccnumber.invalid && p_ccnumber.dirty">
+    <div *ngIf="p_ccnumber.errors?.required">
+        Please enter a valid credit card number.
+    </div>
+    <div *ngIf="p_ccnumber.errors?.minlength">
+        Credit card number must contain 16 digits.
+    </div>
+</div>

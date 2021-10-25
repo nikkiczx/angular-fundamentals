@@ -20,8 +20,17 @@ export class CartService {
 
   updateQuantity(newQuantity: number, itemID: number): void {
     let index: number = this.cartList.findIndex(
-      (c) => (c.id = itemID)
+      (c) => (c.id === itemID)
     );
     this.cartList[index].quantity = newQuantity;
+  }
+
+  calcCartTotal() {
+    let totalSum = 0;
+    for (let i = 0; i < this.cartList.length; i++) {
+      totalSum += (this.cartList[i].price * this.cartList[i].quantity);
+    }
+  
+    return totalSum; 
   }
 }

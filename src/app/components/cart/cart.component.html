@@ -1,7 +1,6 @@
 <h1>Your Cart</h1>>
 <a routerLink="/">Continue shopping</a>
 <h2>Items</h2>
-<app-cart-item *ngFor="let cart of cartList" [cart]="cart"></app-cart-item>
-
+<app-cart-item *ngFor="let cart of cartList" [cart]="cart" (newQuantity)="getNewTotal(cart)"></app-cart-item>
+<app-cart-checkout></app-cart-checkout>  
 <p>Total: ${{totalSum}}</p>
-  
