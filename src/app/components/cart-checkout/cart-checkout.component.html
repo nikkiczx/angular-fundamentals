@@ -8,7 +8,7 @@
     <label>Credit card number</label>
     <input type="text" name="ccnumber" [(ngModel)]="ccnumber" #p_ccnumber="ngModel" required minlength="16" maxlength="16" placeholder="(16-digit number)">
 
-    <button type="submit">Submit</button>
+    <button type="submit"><a href="/cart/success">Submit</a></button>
 </form>
 
 <div *ngIf="p_name.invalid && p_name.dirty">

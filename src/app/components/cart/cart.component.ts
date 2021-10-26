@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
     this.totalSum = this.cartService.calcCartTotal();
   }
 
-  getNewTotal(cart: any) {
+  getNewTotal() {
     this.getCartSum();
   }
 }

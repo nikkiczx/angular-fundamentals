@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { OrderService } from 'src/app/services/order.service';
+import { Order } from '../../models/Order';
 
 @Component({
   selector: 'app-cart-checkout',
@@ -6,17 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-checkout.component.css']
 })
 export class CartCheckoutComponent implements OnInit {
+  @Input() totalSum: number;
   name: string = '';
   address: string = '';
   ccnumber: string = '';
+  order: Order;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private orderService: OrderService) { 
+    this.order = {
+      name: "",
+      price: 0
+    },
+    this.totalSum = 0
   }
 
-  onSubmit(): void {
+  ngOnInit(): void {}
 
+  onSubmit(): void {
+    this.order.name = this.name;
+    this.order.price = this.totalSum;
+    this.orderService.saveOrder(this.order);
   }
 
 }

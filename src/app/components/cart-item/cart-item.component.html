@@ -6,7 +6,7 @@
         <p>{{ cart.name }}</p>        
         <p>${{ cart.price}}</p>
         <p>{{ cart.quantity }}</p>
-        <div>Quantity: <input type="number" step="1" value="{{ cart.quantity }}" name="itemQuantity" [(ngModel)]="itemQuantity"
+        <div>Quantity: <input type="number" step="1" name="itemQuantity" [(ngModel)]="itemQuantity"
             (ngModelChange)=changeQuantity($event) (click) = "newQuantity.emit(cart)"></div>
     </li>
 </ol>
