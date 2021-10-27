@@ -1,0 +1,25 @@
+.form-checkout {
+    display: grid;
+    text-align: center;
+}
+
+label {
+    padding: 10px 0px;
+}
+
+input {
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+    width: 100px;
+    margin-top: 10px;
+    font-family: 'Merriweather', serif;
+    font-size: 12px;
+    color: white;
+    background-color:rgb(15, 170, 170);
+    padding: 5px;
+    border-radius: 5px;
+    border-color: rgb(15, 170, 170);
+}

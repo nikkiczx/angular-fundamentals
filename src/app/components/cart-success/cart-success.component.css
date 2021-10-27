@@ -1,0 +1,21 @@
+.success-container {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.order-details {
+    font-size: 20px;
+}
+
+button {
+    margin-top: 10px;
+    width: 180px;
+    margin-top: 10px;
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    color: white;
+    background-color:rgb(15, 170, 170);
+    padding: 10px;
+    border-radius: 5px;
+    border-color: rgb(15, 170, 170);
+}

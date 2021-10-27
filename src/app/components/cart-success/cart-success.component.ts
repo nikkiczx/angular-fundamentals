@@ -9,11 +9,10 @@ import { Order } from '../../models/Order';
 })
 export class CartSuccessComponent implements OnInit {
   orderList: Order[] = [];
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService) {}
 
   ngOnInit(): void {
-    this.orderList = this.orderService.getOrder();
-    console.log(this.orderList);
+    this.orderList = this.orderService.getOrder();    
   }
 
 }

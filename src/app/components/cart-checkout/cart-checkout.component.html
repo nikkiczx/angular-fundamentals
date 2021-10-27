@@ -1,14 +1,14 @@
-<form (ngSubmit)="onSubmit()">
+<form #form="ngForm" class="form-checkout" (ngSubmit)="onSubmit()">
     <label>Name</label>
     <input type="text" name="name" [(ngModel)]="name" #p_name="ngModel" required minlength="8">
 
     <label>Address</label>
-    <textarea type="text" name="address" [(ngModel)]="address" #p_address="ngModel" required minlength="15"></textarea>
+    <textarea type="text" rows="5" name="address" [(ngModel)]="address" #p_address="ngModel" required minlength="15"></textarea>
 
     <label>Credit card number</label>
     <input type="text" name="ccnumber" [(ngModel)]="ccnumber" #p_ccnumber="ngModel" required minlength="16" maxlength="16" placeholder="(16-digit number)">
 
-    <button type="submit"><a href="/cart/success">Submit</a></button>
+    <div><button [disabled]="form.invalid" type="submit">Submit</button></div>
 </form>
 
 <div *ngIf="p_name.invalid && p_name.dirty">

@@ -6,6 +6,7 @@ import { Order } from '../models/Order';
 })
 export class OrderService {
   orderList: Order[] = [];
+  
   constructor() { }
 
   getOrder() {
@@ -14,6 +15,5 @@ export class OrderService {
 
   saveOrder(order: Order): void {
     this.orderList.push(order);
-    console.log(this.orderList);
   }
 }

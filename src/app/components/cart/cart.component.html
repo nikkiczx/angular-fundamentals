@@ -1,6 +1,16 @@
-<h1>Your Cart</h1>>
-<a routerLink="/">Continue shopping</a>
-<h2>Items</h2>
-<app-cart-item *ngFor="let cart of cartList" [cart]="cart" (newQuantity)="getNewTotal()"></app-cart-item>
-<app-cart-checkout [totalSum]="totalSum"></app-cart-checkout>
-<p>Total: ${{totalSum}}</p>
+<div class="cart-container">
+    <h1>Your Cart</h1>
+    <div class="empty-cart-message" *ngIf="totalSum == 0">Your cart is empty</div>
+    <div class="cart-item" *ngIf="totalSum > 0">
+        <h2>Items</h2>
+        <app-cart-item *ngFor="let cart of cartList" [cart]="cart" (newQuantity)="getNewTotal()"></app-cart-item>        
+        <h2 class="cart-total">Total: ${{totalSum}}</h2>
+    </div>
+    <a routerLink="/">Continue shopping</a>
+    <hr>
+    <div class="cart-item" *ngIf="totalSum > 0">
+        <h2>Customer Details</h2>
+        <app-cart-checkout [totalSum]="totalSum"></app-cart-checkout>
+    </div>
+</div>
+

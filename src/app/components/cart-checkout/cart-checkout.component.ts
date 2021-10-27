@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
 import { Order } from '../../models/Order';
 
@@ -14,7 +15,7 @@ export class CartCheckoutComponent implements OnInit {
   ccnumber: string = '';
   order: Order;
 
-  constructor(private orderService: OrderService) { 
+  constructor(private orderService: OrderService, private router: Router) { 
     this.order = {
       name: "",
       price: 0
@@ -28,6 +29,7 @@ export class CartCheckoutComponent implements OnInit {
     this.order.name = this.name;
     this.order.price = this.totalSum;
     this.orderService.saveOrder(this.order);
+    this.router.navigate(['cart/success'])
   }
 
 }

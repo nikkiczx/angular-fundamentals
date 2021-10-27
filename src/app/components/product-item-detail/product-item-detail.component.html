@@ -1,6 +1,5 @@
 <div class="detail-container">
-  <div class="detail-item">
-    <img    
+  <img    
       src="{{ productItem.url }}"
       alt="{{ productItem.name }}"
     />
@@ -11,5 +10,4 @@
       <option *ngFor="let quantity of inventory"  [value]="quantity" >{{ quantity }}</option>
     </select>
     <button (click)="addToCart()">Add To Cart</button>
-  </div>
 </div>

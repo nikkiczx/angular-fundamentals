@@ -1,1 +1,9 @@
-<p>cart-success works!</p>
+<div *ngIf="orderList.length > 0" class="success-container">
+    <div class="success-items">
+      <h1 class=" success-header">Success!!</h1>
+      <p>Thank you <b class="order-details">{{ orderList[0].name }}</b></p>
+      <p>Your <b class="order-details">${{ orderList[0].price }}</b> order is confirmed!</p>
+      <p>Please allow 1-3 business days for shipping.</p>
+      <button routerLink='/'>Continue shopping</button>
+    </div>
+</div>

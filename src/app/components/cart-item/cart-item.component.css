@@ -8,15 +8,13 @@ img {
   }
   
   .cart-item {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
+    float: right;
+    width: 50%;
   }
   
   .cart-item-details {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    justify-content: center;    
     align-items: left;
     margin-left: 80px;
   }
@@ -27,19 +25,12 @@ img {
   }
   
   .cart-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
-    margin-top: 64px;
   }
   
   .cart-panel {
     margin-left: 50px;
     margin-right: 50px;
-  }
-  
-  .empty-cart-message {
-    display: flex;
-    justify-content: center;
-    margin-top: 64px;
   }
