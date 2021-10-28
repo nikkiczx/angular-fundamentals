@@ -1,13 +1,11 @@
-<ol class="cart-container">
-  <li>
-      <img  
-    src="{{ cart.url }}"
-    alt="{{ cart.name }}"/>
-    <div class="cart-item">
-      <h3>{{ cart.name }}</h3>        
-      <p>${{ cart.price}} per unit</p>
-      <div>Quantity: <input type="number" step="1" name="itemQuantity" [(ngModel)]="itemQuantity"
-          (ngModelChange)=changeQuantity($event) (click)="newQuantity.emit(cart)"></div>
-    </div>      
-  </li>
-</ol>
+<div class="cart-container">
+    <img  
+  src="{{ cart.url }}"
+  alt="{{ cart.name }}"/>
+  <div class="cart-item">
+    <h3>{{ cart.name }}</h3>        
+    <p>${{ cart.price}} per unit</p>
+    <div>Quantity: <input type="number" step="1" name="itemQuantity" [(ngModel)]="cart.quantity"
+        (ngModelChange)=changeQuantity($event) (click)="newQuantity.emit(cart)"></div>
+  </div>
+</div>

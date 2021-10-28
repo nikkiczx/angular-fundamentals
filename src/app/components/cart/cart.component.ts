@@ -24,11 +24,12 @@ export class CartComponent implements OnInit {
         this.totalSum += (this.cartList[i].price * this.cartList[i].quantity);
       }      
     }
-    return this.totalSum;  
+    return this.totalSum.toFixed(2);  
   }
 
   getCartSum() {
-    this.totalSum = this.cartService.calcCartTotal();
+    this.totalSum = this.cartService.calcCartTotal().toFixed(2) as unknown as number;
+    console.log(this.totalSum);
   }
 
   getNewTotal() {

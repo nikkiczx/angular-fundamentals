@@ -10,7 +10,7 @@ import { CartService } from "src/app/services/cart.service";
 export class CartItemComponent implements OnInit {
   @Input() cart: Product;
   cartList: Product[] = [];  
-  itemQuantity: number = 0;
+  itemQuantity: number = 1;
   @Output() newQuantity = new EventEmitter();
 
   constructor(private cartService: CartService) {
@@ -29,7 +29,7 @@ export class CartItemComponent implements OnInit {
   changeQuantity(itemQuantity: number) {
     if (itemQuantity >= 0) {
       this.cartService.updateQuantity(itemQuantity, this.cart.id);
-    }    
+    }
   }
 
 }
